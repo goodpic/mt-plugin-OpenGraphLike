@@ -50,6 +50,7 @@ TEMPLATE CODE
 
 CHANGES
 
+0.2  2010.Aug.26 Bug Fix for word counting.
 0.1  2010.Aug.26 Initial release.
 
 AUTHOR
