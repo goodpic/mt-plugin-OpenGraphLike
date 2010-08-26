@@ -3,6 +3,7 @@ package OpenGraphLike;
 use strict;
 use utf8;
 use warnings;
+use MT::Util qw( remove_html );
 
 sub _hdlr_opengraph_meta {
     my ($ctx, $args, $cond) = @_;
@@ -28,7 +29,10 @@ sub _hdlr_opengraph_meta {
             $assets_str .= '<meta property="og:image" content="'. $asset->url  . '"/>';
         }
     }
-    $description = MT::Util::first_n_words($description,150);
+
+    my @words = split /\s+/, remove_html($description);
+    $description = join '', @words;
+    $description = substr($description, 0, 200);
 
     my $meta = '<meta property="og:site_name" content="' . $blog->name . '"/>';
     $meta .=<<"EOF";
