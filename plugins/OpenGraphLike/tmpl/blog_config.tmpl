@@ -1,0 +1,49 @@
+<mtapp:setting id="fb_admins" label="FaceBook User/Application ID(s)" hint="A comma-separated list of either the Facebook IDs of page administrators or a Facebook Platform application ID. At a minimum, include only your own Facebook ID." show_hint="1">
+  <input type="text" name="fb_admins" id="fb_admins" value="<mt:GetVar name="fb_admins">" />
+</mtapp:setting>
+
+<mtapp:setting id="fb_layout" label="Layour Style" hint="Standard - displays social text to the right of the button and friends' profile photos below. Minimum width: 225 pixels. Default width: 450 pixels. Height: 35 pixels (without photos) or 80 pixels (with photos).<br /> Button_count - displays the total number of likes to the right of the button. Minimum width: 90 pixels. Default width: 90 pixels. Height: 20 pixels." show_hint="1">
+
+  <select name="fb_layout" id="fb_layout" />
+    <option value="standard"<mt:if var="fb_layout" eq="standard"> selected="selected"</mt:if>>Standard</option>
+    <option value="button_count"<mt:if var="fb_layout" eq="button_count"> selected="selected"</mt:if>>Button_Count</option>
+  </select>
+</mtapp:setting>
+
+<mtapp:setting id="fb_faces" label="Show Faces" hint="specifies whether to display profile photos below the button (standard layout only)" show_hint="1">
+  <input type="checkbox" name="fb_faces" id="fb_faces" value="1" <mt:if name="fb_faces"> checked="checked"</mt:if>  />
+</mtapp:setting>
+
+<mtapp:setting id="fb_excerpt" label="Use Excerpt" hint="Use MTEntryExcerpt instead of MTEntryBody for the description." show_hint="1">
+  <input type="checkbox" name="fb_excerpt" id="fb_excerpt" value="1" <mt:if name="fb_excerpt"> checked="checked"</mt:if>  />
+</mtapp:setting>
+
+
+<mtapp:setting id="fb_width" label="Width" hint="the width of the Like button." show_hint="1">
+<input type="text" name="fb_width" id="fb_width" value="<mt:GetVar name="fb_width">" />
+</mtapp:setting>
+
+<mtapp:setting id="fb_verb" label="Verb to Display" hint="The verb to display on the button." show_hint="1">
+  <select name="fb_verb" id="fb_verb" />
+    <option value="like"<mt:if var="fb_verb" eq="like"> selected="selected"</mt:if>>Like</option>
+    <option value="recommended"<mt:if var="fb_verb" eq="recommended"> selected="selected"</mt:if>>Recommended</option>
+  </select>
+</mtapp:setting>
+
+<mtapp:setting id="fb_font" label="Font" hint="The font to display in the button." show_hint="1">
+  <select name="fb_font" id="fb_font" />
+    <option value="arial"<mt:if var="fb_font" eq="arial"> selected="selected"</mt:if>>Arial</option>
+    <option value="lucida grande"<mt:if var="fb_font" eq="lucida grande"> selected="selected"</mt:if>>Lucida Grande</option>
+    <option value="segoe ui"<mt:if var="fb_font" eq="segoe ui"> selected="selected"</mt:if>>Segoe Ui</option>
+    <option value="tahoma"<mt:if var="fb_font" eq="tahoma"> selected="selected"</mt:if>>Tahoma</option>
+    <option value="trebuchet ms"<mt:if var="fb_font" eq="trebuchet ms"> selected="selected"</mt:if>>Trebuchet MS</option>
+    <option value="verdana"<mt:if var="fb_font" eq="verdana"> selected="selected"</mt:if>>Verdana</option>
+  </select>
+</mtapp:setting>
+
+<mtapp:setting id="fb_color" label="Color Scheme" hint="The color scheme for the like button. " show_hint="1">
+  <select name="fb_color" id="fb_color" />
+    <option value="light"<mt:if var="fb_color" eq="light"> selected="selected"</mt:if>>Light</option>
+    <option value="dark"<mt:if var="fb_color" eq="dark"> selected="selected"</mt:if>>Dark</option>
+  </select>
+</mtapp:setting>
