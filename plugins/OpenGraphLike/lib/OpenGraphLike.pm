@@ -123,7 +123,8 @@ sub _hdlr_tweet_button {
     if ($config->{'og_tweet_user'}) {
         $button .= ' data-via="' . $config->{'og_tweet_user'} . '" ';
     }
-    $button .= '>Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>';
+    $button .= '>Tweet</a>';
+    $button .= '<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>';
     return $button;
 }
 
@@ -179,6 +180,7 @@ sub _hdlr_hatena_button {
     my $config    = MT->component("OpenGraphLike")->get_config_hash("blog:" . $blog->id);
     my $entry     = $ctx->stash('entry');
     my %og   = &_get_og($blog, $entry, $config);
+    $og{'og:url'} =~ tr/http://d;
     my $button = '<a href="http://b.hatena.ne.jp/entry/'
         . $og{'og:url'} . '" class="hatena-bookmark-button" data-hatena-bookmark-title="'
         . $og{'og:title'} . '" data-hatena-bookmark-layout="'
