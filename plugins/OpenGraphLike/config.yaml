@@ -1,7 +1,7 @@
-name: FaceBookLike
+name: OpenGraphLike
 id: OpenGraphLike
 description: The Like button lets a user share your content with friends on Facebook. When the user clicks the Like button on your site, a story appears in the user's friends' News Feed with a link back to your website.
-version: 0.2
+version: 0.3
 blog_config_template: blog_config.tmpl
 settings:
   fb_admins:
@@ -19,9 +19,48 @@ settings:
   fb_font:
     scope: blog
   fb_color:
+    scope: blog
+  fb_send:
     scope: blog    
+  og_lang:
+    scope: blog
+  og_google_size:
+    scope: blog
+  og_google_count:
+    scope: blog
+  og_google_callback:
+    scope: blog    
+  og_tweet_size:
+    scope: blog
+  og_tweet_user:
+    scope: blog
+  og_hatena_size:
+    scope: blog
+  og_tumblr_size:
+    scope: blog
+  og_evernote_size:
+    scope: blog
+  og_evernote_id:
+    scope: blog
+  og_evernote_code:
+    scope: blog    
+  og_mixi_key:
+    scope: blog
+  og_mixi_size:
+    scope: blog
+  og_gree_size:
+    scope: blog        
+    
 tags:
   function:
-    OpenGraphMeta: $OpenGraphLike::OpenGraphLike::_hdlr_opengraph_meta
-    FaceBookLike: $OpenGraphLike::OpenGraphLike::_hdlr_facebook_like
+    OpenGraphMeta:    $OpenGraphLike::OpenGraphLike::_hdlr_opengraph_meta
+    FaceBookLike:     $OpenGraphLike::OpenGraphLike::_hdlr_facebook_button
+    GooglePlusButton: $OpenGraphLike::OpenGraphLike::_hdlr_google_button
+    TumblrButton:     $OpenGraphLike::OpenGraphLike::_hdlr_tumblr_button
+    TumblrJS:         $OpenGraphLike::OpenGraphLike::_hdlr_tumblr_js    
+    TweetButton:      $OpenGraphLike::OpenGraphLike::_hdlr_tweet_button
+    EvernoteButton:   $OpenGraphLike::OpenGraphLike::_hdlr_evernote_button
+    HatenaBookmarkButton: $OpenGraphLike::OpenGraphLike::_hdlr_hatena_button
+    MixiButton:       $OpenGraphLike::OpenGraphLike::_hdlr_mixi_button
+    GreeButton:       $OpenGraphLike::OpenGraphLike::_hdlr_gree_button
 l10n_class: OpenGraph::L10N
