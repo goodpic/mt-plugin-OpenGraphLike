@@ -180,7 +180,7 @@ sub _hdlr_hatena_button {
     my $config    = MT->component("OpenGraphLike")->get_config_hash("blog:" . $blog->id);
     my $entry     = $ctx->stash('entry');
     my %og   = &_get_og($blog, $entry, $config);
-    $og{'og:url'} =~ tr/http:\/\///d;
+    $og{'og:url'} =~ s/http:\/\///g;
     my $button = '<a href="http://b.hatena.ne.jp/entry/'
         . $og{'og:url'} . '" class="hatena-bookmark-button" data-hatena-bookmark-title="'
         . $og{'og:title'} . '" data-hatena-bookmark-layout="'
