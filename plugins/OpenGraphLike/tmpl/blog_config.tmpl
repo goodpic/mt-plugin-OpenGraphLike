@@ -1,13 +1,13 @@
 <fieldset>
-  <legend><strong>Common Settings</strong></legend>
-
-  <mtapp:setting id="og_lang" label="Language" hint="Language of your contents." show_hint="1">
+  <legend><strong><__trans phrase="Common Settings" /></strong></legend>
+  
+  <mtapp:setting id="og_lang" label="<__trans phrase="Language" />" hint="Language of your contents." show_hint="1">
     <select name="og_lang" id="og_lang">
       <option value="en"<mt:if var="og_lang" eq="en"> selected="selected"</mt:if>>English</option>
       <option value="fr"<mt:if var="og_lang" eq="fr"> selected="selected"</mt:if>>French</option>
       <option value="de"<mt:if var="og_lang" eq="de"> selected="selected"</mt:if>>German</option>
       <option value="it"<mt:if var="og_lang" eq="it"> selected="selected"</mt:if>>Italian</option>
-      <option value="ja"<mt:if var="og_lang" eq="ja"> selected="selected"</mt:if>>Japanese</option>
+      <option value="ja"<mt:if var="og_lang" eq="ja"> selected="selected"</mt:if>><__trans phrase="Japanese"></option>
       <option value="ko"<mt:if var="og_lang" eq="ko"> selected="selected"</mt:if>>Korean</option>
       <option value="pt"<mt:if var="og_lang" eq="pt"> selected="selected"</mt:if>>Portuguese</option>
       <option value="ru"<mt:if var="og_lang" eq="ru"> selected="selected"</mt:if>>Russian</option>
@@ -16,7 +16,7 @@
     </select>
   </mtapp:setting>
 
-  <mtapp:setting id="fb_excerpt" label="Use Excerpt" hint="Use MTEntryExcerpt instead of MTEntryBody for the description." show_hint="1">
+  <mtapp:setting id="fb_excerpt" label="<__trans phrase='Use Excerpt'>" hint="Use MTEntryExcerpt instead of MTEntryBody for the description." show_hint="1">
     <input type="checkbox" name="fb_excerpt" id="fb_excerpt" value="1" <mt:if name="fb_excerpt"> checked="checked"</mt:if>  />
   </mtapp:setting>
 
@@ -24,18 +24,18 @@
   
 
 <fieldset>
-  <legend><strong>Google +1 Settings</strong></legend>
+  <legend><strong>Google +1 <__trans phrase='Settings'></strong></legend>
 
-  <mtapp:setting id="og_google_size" label="Size" hint="" show_hint="0">
+  <mtapp:setting id="og_google_size" label="<__trans phrase='Button Size'>" hint="" show_hint="0">
     <select name="og_google_size" id="og_google_size">
-      <option value="small"<mt:if var="og_google_size" eq="small"> selected="selected"</mt:if>>Small(15px)</option>
-      <option value="medium"<mt:if var="og_google_size" eq="medium"> selected="selected"</mt:if>>Medium(20px)</option>
-      <option value="standard"<mt:if var="og_google_size" eq="standard"> selected="selected"</mt:if>>Standard(24px)</option>
-      <option value="tall"<mt:if var="og_google_size" eq="tall"> selected="selected"</mt:if>>Tall(60px)</option>
+      <option value="small"<mt:if var="og_google_size" eq="small"> selected="selected"</mt:if>>Small (15px)</option>
+      <option value="medium"<mt:if var="og_google_size" eq="medium"> selected="selected"</mt:if>>Medium (20px)</option>
+      <option value="standard"<mt:if var="og_google_size" eq="standard"> selected="selected"</mt:if>>Standard (24px)</option>
+      <option value="tall"<mt:if var="og_google_size" eq="tall"> selected="selected"</mt:if>>Tall (60px)</option>
     </select>
   </mtapp:setting>
 
-  <mtapp:setting id="og_google_count" label="Include count" hint="" show_hint="0">
+  <mtapp:setting id="og_google_count" label="<__trans phrase='Include count'>" hint="" show_hint="0">
     <input type="checkbox" name="og_google_count" id="og_google_count" value="1" <mt:if name="og_google_count"> checked="checked"</mt:if>  />
   </mtapp:setting>
 
@@ -45,29 +45,29 @@
 </fieldset>
 
 <fieldset>
-  <legend><strong>Tweet Button Settings</strong></legend>
+  <legend><strong>Tweet Button <__trans phrase='Settings'></strong></legend>
 
-  <mtapp:setting id="og_tweet_size" label="Size" hint="" show_hint="0">
+  <mtapp:setting id="og_tweet_size" label="<__trans phrase='Button Size'>" hint="" show_hint="0">
     <select name="og_tweet_size" id="og_tweet_size">
-      <option value="vertical"<mt:if var="og_tweet_size" eq="vertical"> selected="selected"</mt:if>>Tall with count</option>
-      <option value="horizontal"<mt:if var="og_tweet_size" eq="horizontal"> selected="selected"</mt:if>>Horizontal with count</option>
-      <option value="none"<mt:if var="og_tweet_size" eq="none"> selected="selected"</mt:if>>Horizontal without count</option>      
+      <option value="vertical"<mt:if var="og_tweet_size" eq="vertical"> selected="selected"</mt:if>><__trans phrase="Tall with count" /></option>
+      <option value="horizontal"<mt:if var="og_tweet_size" eq="horizontal"> selected="selected"</mt:if>><__trans phrase="Horizontal with count" /></option>
+      <option value="none"<mt:if var="og_tweet_size" eq="none"> selected="selected"</mt:if>><__trans phrase="Horizontal without count" /></option>      
     </select>
   </mtapp:setting>
   
-  <mtapp:setting id="og_tweet_user" label="User" hint="This user will be @ mentioned in the suggested Tweet" show_hint="1">
+  <mtapp:setting id="og_tweet_user" label="<__trans phrase='@ mention'>" hint="This user will be @ mentioned in the suggested Tweet" show_hint="1">
     <input type="text" name="og_tweet_user" id="og_tweet_user" value="<mt:GetVar name="og_tweet_user">" />
   </mtapp:setting>
 </fieldset>
 
 <fieldset>
-  <legend><strong>Facebook Like Settings</strong></legend>
+  <legend><strong>Facebook Like <__trans phrase='Settings'></strong></legend>
   
 <mtapp:setting id="fb_admins" label="FaceBook User/Application ID(s)" hint="A comma-separated list of either the Facebook IDs of page administrators or a Facebook Platform application ID. At a minimum, include only your own Facebook ID." show_hint="1">
   <input type="text" name="fb_admins" id="fb_admins" value="<mt:GetVar name="fb_admins">" />
 </mtapp:setting>
 
-<mtapp:setting id="fb_layout" label="Layout Style" hint="Standard - displays social text to the right of the button and friends' profile photos below. Minimum width: 225 pixels. Default width: 450 pixels. Height: 35 pixels (without photos) or 80 pixels (with photos).<br /> Button_count - displays the total number of likes to the right of the button. Minimum width: 90 pixels. Default width: 90 pixels. Height: 20 pixels." show_hint="1">
+<mtapp:setting id="fb_layout" label="<__trans phrase='Button Size'>" hint="Standard - displays social text to the right of the button and friends' profile photos below. Minimum width: 225 pixels. Default width: 450 pixels. Height: 35 pixels (without photos) or 80 pixels (with photos).<br /> Button_count - displays the total number of likes to the right of the button. Minimum width: 90 pixels. Default width: 90 pixels. Height: 20 pixels." show_hint="1">
 
   <select name="fb_layout" id="fb_layout">
     <option value="standard"<mt:if var="fb_layout" eq="standard"> selected="selected"</mt:if>>Standard</option>
@@ -75,27 +75,27 @@
   </select>
 </mtapp:setting>
 
-<mtapp:setting id="fb_send" label="Send Button" hint="" show_hint="0">
+<mtapp:setting id="fb_send" label="<__trans phrase='Send Button'>" hint="" show_hint="0">
   <input type="checkbox" name="fb_send" id="fb_send" value="1" <mt:if name="fb_send"> checked="checked"</mt:if>  />
 </mtapp:setting>
 
-<mtapp:setting id="fb_faces" label="Show Faces" hint="specifies whether to display profile photos below the button (standard layout only)" show_hint="1">
+<mtapp:setting id="fb_faces" label="<__trans phrase='Show Faces'>" hint="specifies whether to display profile photos below the button (standard layout only)" show_hint="1">
   <input type="checkbox" name="fb_faces" id="fb_faces" value="1" <mt:if name="fb_faces"> checked="checked"</mt:if>  />
 </mtapp:setting>
 
 
-<mtapp:setting id="fb_width" label="Width" hint="the width of the Like button." show_hint="1">
+<mtapp:setting id="fb_width" label="<__trans phrase='Width'>(px)" hint="the width of the Like button." show_hint="1">
 <input type="text" name="fb_width" id="fb_width" value="<mt:GetVar name="fb_width">" />
 </mtapp:setting>
 
-<mtapp:setting id="fb_verb" label="Verb to Display" hint="The verb to display on the button." show_hint="1">
+<mtapp:setting id="fb_verb" label="<__trans phrase='Verb to Display'>" hint="The verb to display on the button." show_hint="1">
   <select name="fb_verb" id="fb_verb">
     <option value="like"<mt:if var="fb_verb" eq="like"> selected="selected"</mt:if>>Like</option>
     <option value="recommend"<mt:if var="fb_verb" eq="recommend"> selected="selected"</mt:if>>Recommend</option>
   </select>
 </mtapp:setting>
 
-<mtapp:setting id="fb_font" label="Font" hint="The font to display in the button." show_hint="1">
+<mtapp:setting id="fb_font" label="<__trans phrase='Font'>" hint="The font to display in the button." show_hint="1">
   <select name="fb_font" id="fb_font">
     <option value="arial"<mt:if var="fb_font" eq="arial"> selected="selected"</mt:if>>Arial</option>
     <option value="lucida grande"<mt:if var="fb_font" eq="lucida grande"> selected="selected"</mt:if>>Lucida Grande</option>
@@ -106,7 +106,7 @@
   </select>
 </mtapp:setting>
 
-<mtapp:setting id="fb_color" label="Color Scheme" hint="The color scheme for the like button. " show_hint="1">
+<mtapp:setting id="fb_color" label="<__trans phrase='Color Scheme'>" hint="The color scheme for the like button. " show_hint="1">
   <select name="fb_color" id="fb_color">
     <option value="light"<mt:if var="fb_color" eq="light"> selected="selected"</mt:if>>Light</option>
     <option value="dark"<mt:if var="fb_color" eq="dark"> selected="selected"</mt:if>>Dark</option>
@@ -116,9 +116,9 @@
 </fieldset>
 
 <fieldset>
-  <legend><strong>Tumblr Button Settings</strong></legend>
+  <legend><strong>Tumblr Button <__trans phrase='Settings'></strong></legend>
 
-  <mtapp:setting id="og_tumblr_size" label="Size" hint="" show_hint="0">
+  <mtapp:setting id="og_tumblr_size" label="<__trans phrase='Button Size'>" hint="" show_hint="0">
     <input type="radio" value="share_1"<mt:if var="og_tumblr_size" eq="share_1"> checked="checked"</mt:if> name="og_tumblr_size" id="og_tumblr_size" /> <img src="http://platform.tumblr.com/v1/share_1.png" class="" alt="" />
     <input type="radio" value="share_4"<mt:if var="og_tumblr_size" eq="share_4"> checked="checked"</mt:if> name="og_tumblr_size" id="og_tumblr_size" /> <img src="http://platform.tumblr.com/v1/share_4.png" class="" alt="" /> <br />
     <input type="radio" value="share_1T"<mt:if var="og_tumblr_size" eq="share_1T"> checked="checked"</mt:if> name="og_tumblr_size" id="og_tumblr_size" /> <img src="http://platform.tumblr.com/v1/share_1T.png" class="" alt="" />
@@ -129,9 +129,9 @@
 
 
 <fieldset>
-  <legend><strong>Evernote Site Memory Settings</strong></legend>
+  <legend><strong>Evernote Site Memory <__trans phrase='Settings'></strong></legend>
 
-  <mtapp:setting id="og_evernote_size" label="Size" hint="" show_hint="0">
+  <mtapp:setting id="og_evernote_size" label="<__trans phrase='Button Size'>" hint="" show_hint="0">
     <input type="radio" value="article-clipper"<mt:if var="og_evernote_size" eq="article-clipper"> checked="checked"</mt:if> name="og_evernote_size" id="og_evernote_size" /> <img src="http://static.evernote.com/article-clipper.png" class="" alt="Evernote Icon" />
     <input type="radio" value="article-clipper-vert"<mt:if var="og_evernote_size" eq="article-clipper-vert"> checked="checked"</mt:if> name="og_evernote_size" id="og_evernote_size" /> <img src="http://static.evernote.com/article-clipper-vert.png" class="" alt="Evernote Icon" />
     <input type="radio" value="site-mem-36"<mt:if var="og_evernote_size" eq="site-mem-36"> checked="checked"</mt:if> name="og_evernote_size" id="og_evernote_size" /> <img src="http://static.evernote.com/site-mem-36.png" class="" alt="Evernote Icon" />
@@ -139,8 +139,8 @@
     <input type="radio" value="site-mem-22"<mt:if var="og_evernote_size" eq="site-mem-22"> checked="checked"</mt:if> name="og_evernote_size" id="og_evernote_size" /> <img src="http://static.evernote.com/site-mem-22.png" class="" alt="Evernote Icon" />
     <input type="radio" value="site-mem-16"<mt:if var="og_evernote_size" eq="site-mem-16"> checked="checked"</mt:if> name="og_evernote_size" id="og_evernote_size" /> <img src="http://static.evernote.com/site-mem-16.png" class="" alt="Evernote Icon" />
   </mtapp:setting>
-  
-  <mtapp:setting id="og_evernote_id" label="Contents ID" hint="HTML element (id) of the contents to be clipped." show_hint="1">
+
+  <mtapp:setting id="og_evernote_id" label="<__trans phrase='Contents ID'>" hint="HTML element (id) of the contents to be clipped." show_hint="1">
     <input type="text" name="og_evernote_id" id="og_evernote_id" value="<mt:GetVar name="og_evernote_id">" />
   </mtapp:setting>
   <mtapp:setting id="og_evernote_code" label="Evernote Affiliate ID" hint="If you have an affiliate ID or API consumer key." show_hint="1">
@@ -150,13 +150,13 @@
 
 
 <fieldset>
-  <legend><strong>Hatena Bookmark Settings</strong></legend>
+  <legend><strong>Hatena Bookmark <__trans phrase='Settings'></strong></legend>
 
-  <mtapp:setting id="og_hatena_size" label="Size" hint="" show_hint="0">
+  <mtapp:setting id="og_hatena_size" label="<__trans phrase='Button Size'>" hint="" show_hint="0">
     <select name="og_hatena_size" id="og_hatena_size">
-      <option value="vertical"<mt:if var="og_hatena_size" eq="vertical"> selected="selected"</mt:if>>Tall with count</option>
-      <option value="standard"<mt:if var="og_hatena_size" eq="standard"> selected="selected"</mt:if>>Horizontal with count</option>
-      <option value="simple"<mt:if var="og_hatena_size" eq="simple"> selected="selected"</mt:if>>Horizontal without count</option>      
+      <option value="vertical"<mt:if var="og_hatena_size" eq="vertical"> selected="selected"</mt:if>><__trans phrase="Tall with count" /></option>
+      <option value="standard"<mt:if var="og_hatena_size" eq="standard"> selected="selected"</mt:if>><__trans phrase="Horizontal with count" /></option>
+      <option value="simple"<mt:if var="og_hatena_size" eq="simple"> selected="selected"</mt:if>><__trans phrase="Horizontal without count" /></option>      
     </select>
   </mtapp:setting>
   
@@ -164,7 +164,7 @@
 
 
 <fieldset>
-  <legend><strong>Mixi Check Settings</strong></legend>
+  <legend><strong>Mixi Check <__trans phrase='Settings'></strong></legend>
 
   <mtapp:setting id="og_mixi_key" label="<MT_TRANS phrase='mixi Check Key'>" hint="<MT_TRANS phrase='Please obtain your check key from the mixi developer center.'>" show_hint="1">
     <input type="text" name="og_mixi_key" id="og_mixi_key" value="<mt:GetVar name="og_mixi_key">" />
@@ -172,9 +172,9 @@
 </fieldset>
 
 <fieldset>
-  <legend><strong>Gree Like Settings</strong></legend>
+  <legend><strong>Gree Like <__trans phrase='Settings'></strong></legend>
 
-    <mtapp:setting id="og_gree_size" label="Size" hint="" show_hint="0">
+    <mtapp:setting id="og_gree_size" label="<__trans phrase='Button Size'>" hint="" show_hint="0">
     <select name="og_gree_size" id="og_gree_size">
       <option value="16"<mt:if var="og_gree_size" eq="16"> selected="selected"</mt:if>>16px</option>
       <option value="20"<mt:if var="og_gree_size" eq="20"> selected="selected"</mt:if>>20px</option>
