@@ -21,9 +21,9 @@ our %Lexicon = (
     'Tall with count' => '縦長 (数を表示)',
     'Horizontal with count' => '横長 (数を表示)',
     'Horizontal without count' => '横長 (数なし)',
-    '' => '',
-    '' => '',
-    '' => '',
+    'Standard' => 'テキストでLike数を表示',
+    'Button_Count' => '横長ボタン',
+    'Box_Count' => '縦長ボタン',
     '' => '',
 );
 

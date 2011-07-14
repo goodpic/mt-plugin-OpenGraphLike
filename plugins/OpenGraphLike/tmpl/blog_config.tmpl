@@ -69,15 +69,17 @@
 
 <mtapp:setting id="fb_layout" label="<__trans phrase='Button Size'>" hint="Standard - displays social text to the right of the button and friends' profile photos below. Minimum width: 225 pixels. Default width: 450 pixels. Height: 35 pixels (without photos) or 80 pixels (with photos).<br /> Button_count - displays the total number of likes to the right of the button. Minimum width: 90 pixels. Default width: 90 pixels. Height: 20 pixels." show_hint="1">
 
+
   <select name="fb_layout" id="fb_layout">
-    <option value="standard"<mt:if var="fb_layout" eq="standard"> selected="selected"</mt:if>>Standard</option>
-    <option value="button_count"<mt:if var="fb_layout" eq="button_count"> selected="selected"</mt:if>>Button_Count</option>
+    <option value="standard"<mt:if var="fb_layout" eq="standard"> selected="selected"</mt:if>><__trans phrase='Standard' /></option>
+    <option value="button_count"<mt:if var="fb_layout" eq="button_count"> selected="selected"</mt:if>><__trans phrase='Button_Count' /></option>
+    <option value="box_count"<mt:if var="fb_layout" eq="box_count"> selected="selected"</mt:if>><__trans phrase='Box_Count' /></option>
   </select>
 </mtapp:setting>
 
-<mtapp:setting id="fb_send" label="<__trans phrase='Send Button'>" hint="" show_hint="0">
+<!-- <mtapp:setting id="fb_send" label="<__trans phrase='Send Button'>" hint="" show_hint="0">
   <input type="checkbox" name="fb_send" id="fb_send" value="1" <mt:if name="fb_send"> checked="checked"</mt:if>  />
-</mtapp:setting>
+</mtapp:setting> -->
 
 <mtapp:setting id="fb_faces" label="<__trans phrase='Show Faces'>" hint="specifies whether to display profile photos below the button (standard layout only)" show_hint="1">
   <input type="checkbox" name="fb_faces" id="fb_faces" value="1" <mt:if name="fb_faces"> checked="checked"</mt:if>  />

@@ -63,13 +63,19 @@ sub _hdlr_facebook_button {
     my ($ctx, $args, $cond) = @_;
     my $blog      = $ctx->stash('blog') or return '';
     my $config    = MT->component("OpenGraphLike")->get_config_hash("blog:" . $blog->id);
-    
     my $entry     = $ctx->stash('entry');
     my %og   = &_get_og($blog, $entry, $config);
 
     my $show_faces = "false";
-    my $height    = $config->{'fb_layout'} eq "button_count" ? 21 : 35;
-    
+    my $send       = "false";
+    my $height     = 35;
+    if ($config->{'fb_layout'} eq "button_count") {
+        $height = 21;
+    } elsif ($config->{'fb_layout'} eq "box_count") {
+        $height = 90;
+    }
+
+    if ( $config->{'fb_send'} )  { $send = "true";}
     if ( $config->{'fb_faces'} ) {
         $show_faces = "true";
         unless ($config->{'fb_layout'} eq "button_count") { $height = 80;}
@@ -78,14 +84,15 @@ sub _hdlr_facebook_button {
          .  MT::Util::encode_url($og{'og:url'})
          . '&amp;layout='      . $config->{'fb_layout'}
          . '&amp;show_faces='  . $show_faces
+         . '&amp;send='        . $send
          . '&amp;width='       . $config->{'fb_width'}
+         . '&amp;height='      . $height
          . '&amp;action='      . $config->{'fb_verb'}
          . '&amp;font='        . $config->{'fb_font'}
          . '&amp;colorscheme=' . $config->{'fb_color'}
-         . '&amp;height='      . $height
          . '" scrolling="no" frameborder="0" style="border:none; overflow:hidden; '
-         . 'width:'            . $config->{'fb_width'}
-         . '; height: '        . $height . 'px;" allowTransparency="true"></iframe>';
+         . 'width:'        . $config->{'fb_width'}
+         . 'px; height: '    . $height . 'px;" allowTransparency="true"></iframe>';
     return $like;
 }
 
