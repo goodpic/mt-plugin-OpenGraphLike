@@ -11,6 +11,7 @@ and gree button.
 The Like button lets a user share your content on social networks.
 When the user clicks the Like button on your site, a story appears
 in the user's friends' News Feed with a link back to your website.
+This plugin supports both static and dynamic publishing.
 
 PREREQUISITES
 
@@ -67,6 +68,7 @@ TEMPLATE CODE
 
 CHANGES
 
+1.0  2011.Jul.28 Support Google+,Tweet,Evernote,Tumblr,etc
 0.2  2010.Aug.26 Bug Fix for word counting.
 0.1  2010.Aug.26 Initial release.
 
