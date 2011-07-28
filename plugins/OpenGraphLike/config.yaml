@@ -1,7 +1,7 @@
 name: OpenGraphLike
 id: OpenGraphLike
 description: <__trans phrase="This plugin adds various social like button to your blog. The Like button lets a user share your content with friends on Facebook, Google+, Twitter, Tumblr, Evernote, etc. When the user clicks the Like button on your site, a story appears in the user's friends' News Feed with a link back to your website."> <br />Insert &lt;$MTOpenGraphMeta$&gt; to your template's html &lt;head&gt;, and paste social button tags where you wish to show the button. If you use tumblr button, you need to paste &amp;lt;$MTTumblrJS$&amp;gt; to your html footer area.
-version: 0.3
+version: 1.0
 blog_config_template: blog_config.tmpl
 settings:
   fb_admins:
