@@ -68,7 +68,7 @@ TEMPLATE CODE
 
 CHANGES
 
-1.0  2011.Jul.28 Support Google+,Tweet,Evernote,Tumblr,etc
+1.0  2011.Jul.28 Support Google+,Tweet,Evernote,Tumblr,and etc
 0.2  2010.Aug.26 Bug Fix for word counting.
 0.1  2010.Aug.26 Initial release.
 
