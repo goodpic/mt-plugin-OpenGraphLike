@@ -63,4 +63,5 @@ tags:
     HatenaBookmarkButton: $OpenGraphLike::OpenGraphLike::_hdlr_hatena_button
     MixiButton:       $OpenGraphLike::OpenGraphLike::_hdlr_mixi_button
     GreeButton:       $OpenGraphLike::OpenGraphLike::_hdlr_gree_button
+    LikeButtons:       $OpenGraphLike::OpenGraphLike::_hdlr_like_buttons
 l10n_class: OpenGraphLike::L10N

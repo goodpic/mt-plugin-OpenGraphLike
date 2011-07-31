@@ -47,15 +47,18 @@ TEMPLATE CODE
   http://developers.facebook.com/docs/opengraph
 
   <$MTFaceBookLike$>
-  <$MTFaceBookLike$>
+  <$MTGooglePlusButton$>
+  <$MTTweetButton$>  
   <$MTEvernoteButton$>
   <$MTTumblrJS$> , <$MTTumblrButton$>
-  <$MTTweetButton$>
   <$MTHatenaBookmarkButton$>
   <$MTGreeButton$>
-  <$MTGooglePlusButton$>
   <$MTMixiButton$>
 
+  If you wish to display all buttons above, use
+  <$MTLikeButtons$>
+  This tag provides better performance.
+  
   See the following developer's guides about technical details.
 
   http://developers.facebook.com/docs/reference/plugins/like

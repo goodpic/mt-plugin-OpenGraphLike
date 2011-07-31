@@ -36,7 +36,10 @@ sub _get_params {
 
 sub _hdlr_opengraph_meta {
     my %params = &_get_params(@_);
-
+    return &_get_opengraph_meta(%params);
+}
+sub _get_opengraph_meta {
+    my %params = @_;
     my $meta = '';
     while ( my ($key, $value) = each %{$params{'data'}} ) {
         $meta .= '<meta property="' . $key . '" content="' . $value . '"/>';
@@ -62,7 +65,11 @@ sub _hdlr_opengraph_meta {
 
 sub _hdlr_facebook_button {
     my %params = &_get_params(@_);
-
+    return &_get_facebook_button(%params);
+}
+sub _get_facebook_button {
+    my %params = @_;
+    
     my $show_faces = "false";
     my $send       = "false";
     my $height     = 35;
@@ -95,6 +102,10 @@ sub _hdlr_facebook_button {
 
 sub _hdlr_google_button {
     my %params = &_get_params(@_);
+    return &_get_google_button(%params);
+}
+sub _get_google_button {
+    my %params = @_;
     
     my $button = "<g:plusone ";
     if ($params{'config'}{'og_google_callback'}) {
@@ -112,6 +123,10 @@ sub _hdlr_google_button {
 
 sub _hdlr_tweet_button {
     my %params = &_get_params(@_);
+    return &_get_tweet_button(%params);
+}
+sub _get_tweet_button {
+    my %params = @_;    
 
     my $button = '<a href="http://twitter.com/share" class="twitter-share-button" data-lang="' . $params{'config'}{'og_lang'}  . '" data-url="' . $params{'data'}{'og:url'} . '"';
     if ($params{'config'}{'og_tweet_size'}) {
@@ -126,6 +141,10 @@ sub _hdlr_tweet_button {
 
 sub _hdlr_tumblr_js {
     my %params = &_get_params(@_);
+    return &_get_tumblr_js(%params);
+}
+sub _get_tumblr_js {
+    my %params = @_;    
 
     my $width = "20px";
     if ( index($params{'config'}{'og_tmblr_size'},"_1")) { $width = "81px";}
@@ -154,6 +173,10 @@ sub _hdlr_tumblr_button {
 
 sub _hdlr_evernote_button {
     my %params = &_get_params(@_);
+    return &_get_evernote_button(%params);
+}
+sub _get_evernote_button {
+    my %params = @_;    
     return <<EOD;
 <script type="text/javascript" src="http://static.evernote.com/noteit.js"></script>
 <a href="#" onclick="Evernote.doClip({contentId:'$params{'config'}{'og_evernote_id'}',providerName:'$params{'data'}{'og:title'}',suggestNotebook:'$params{'config'}{'og_evernote_book'}',code:'$params{'config'}{'og_evernote_code'}'}); return false;"><img src="http://static.evernote.com/$params{'config'}{'og_evernote_size'}.png" alt="Clip to Evernote" /></a>
@@ -162,6 +185,10 @@ EOD
 
 sub _hdlr_hatena_button {
     my %params = &_get_params(@_);
+    return &_get_hatena_button(%params);
+}
+sub _get_hatena_button {
+    my %params = @_;    
     my $button = '<a href="http://b.hatena.ne.jp/entry/'
         . $params{'data'}{'og:url'} . '" class="hatena-bookmark-button" data-hatena-bookmark-title="'
         . $params{'data'}{'og:title'} . '" data-hatena-bookmark-layout="'
@@ -171,6 +198,10 @@ sub _hdlr_hatena_button {
 
 sub _hdlr_mixi_button {
     my %params = &_get_params(@_);
+    return &_get_mixi_button(%params);
+}
+sub _get_mixi_button {
+    my %params = @_;    
     return <<EOF
 <a href="http://mixi.jp/share.pl" class="mixi-check-button" data-key="$params{'config'}{'og_mixi_key'}" data-url="$params{'data'}{'og:url'}" data-button="button-3">Check</a><script type="text/javascript" src="http://static.mixi.jp/js/share.js"></script>
 EOF
@@ -178,10 +209,27 @@ EOF
 
 sub _hdlr_gree_button {
     my %params = &_get_params(@_);
+    return &_get_gree_button(%params);
+}
+sub _get_gree_button {
+    my %params = @_;    
     return <<EOF
     <iframe src="http://share.gree.jp/share?url=$params{'data'}{'og:url'}&type=0&height=$params{'config'}{'og_gree_size'}" scrolling="no" frameborder="0" marginwidth="0" marginheight="0" style="border:none; overflow:hidden; width:100px; height: $params{'config'}{'og_gree_size'}px;" allowTransparency="true"></iframe>
 EOF
         # return Dumper(\%params);
+}
+
+sub _hdlr_like_buttons {
+    my %params = &_get_params(@_);
+
+    return &_get_facebook_button(%params)
+            . &_get_google_button(%params)
+            . &_get_tweet_button(%params)
+            . &_get_evernote_button(%params)
+            . &_get_hatena_button(%params)
+            . &_hdlr_tumblr_button()
+            . &_get_mixi_button(%params)
+            . &_get_gree_button(%params);
 }
 
 1;
